@@ -37,29 +37,18 @@ def predict_api():
     # Extract the input features from the request.form.get data
     data = request.json['data']
     longitude = float(data['Longitude'])
-    print(longitude)
     latitude = float(data['Latitude'])
-    print(latitude)
     housing_median_age = float(data['Housing Median Age'])
-    print(housing_median_age)
     total_rooms = float(data['Total Rooms'])
-    print(total_rooms)
     total_bedrooms = float(data['Total Bedrooms'])
-    print(total_bedrooms)
     population = float(data['Population'])
-    print(population)
     households = float(data['Households'])
-    print(households)
     median_income = float(data['Median Income'])
-    print(median_income)
     ocean_proximity = data['Ocean Proximity']
-    print(ocean_proximity)
 
 
     bedroom_ratio = total_bedrooms / total_rooms
-    print(bedroom_ratio)
     households_rooms = total_rooms / households
-    print(households_rooms)
 
     # Concatenate the input features
     X = np.concatenate(([[longitude, latitude, housing_median_age, total_rooms,
